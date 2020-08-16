@@ -5,6 +5,8 @@ from sklearn.preprocessing import OneHotEncoder
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 import matplotlib.pyplot as plt
+import sklearn.metrics as metrics
+from sklearn.metrics import r2_score
 
 dataset = pd.read_csv('50_Startups.csv')
 
@@ -27,3 +29,5 @@ print(mlr.predict([[1, 0, 0, 160000, 130000, 300000]]))
 ## Getting the final linear regression equation with the 
 print(mlr.coef_)
 print(mlr.intercept_)
+
+r2_score(y_test,y_pred)
